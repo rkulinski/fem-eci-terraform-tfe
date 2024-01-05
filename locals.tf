@@ -9,7 +9,13 @@ locals {
       description         = "Example description"
       execution_mode      = "remote"
       project_id          = module.project["fem-eci-project"].id
-      vcs_repo_identifier = "rkulinski/fem-eci-terraform-tfe"
+      vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-tfe"
+    }
+    "fem-eci-github" = {
+      description         = "Example description"
+      execution_mode      = "local"
+      project_id          = module.project["fem-eci-project"].id
+      vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-github"
     }
   }
 }
